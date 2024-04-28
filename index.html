@@ -9,16 +9,20 @@
             margin: 0;
             padding: 0;
             font-family: Arial, sans-serif;
-            background-color: #007bff; /* Blue background color */
+            background: url("./img/home.jpg") no-repeat center center fixed; /* Set image as background */
+            background-size: cover; /* Cover the entire viewport */
             color: #333; /* Text color */
         }
         header {
-            background-color: #fff; /* White background color for header */
+            background-color: rgba(255, 255, 255, 0.8); /* White background color for header with opacity */
             color: #333; /* Text color for header */
             padding: 20px;
             display: flex;
             align-items: center;
             justify-content: space-between;
+            position: fixed; /* Fixed position to keep the header on top */
+            width: 98%; /* Full width */
+            z-index: 1; /* Ensure header stays on top */
         }
         header img {
             height: 50px; /* Set height for logo */
@@ -37,37 +41,59 @@
             color: #333; /* Text color for navigation */
             padding: 10px;
             border-radius: 5px;
+            font-size: 16px; /* Adjust font size */
         }
         nav a:hover {
             background-color: yellow; /* Yellow background color on hover */
             color: #333; /* Text color on hover */
         }
         .welcome-message {
-            padding: 50px;
-            text-align: center;
+        padding: 150px 20px; /* Add more padding to the top and bottom, and a bit of side padding */
+        text-align: center;
+        position: relative;
+        }
+        .welcome-message::before {
+            content: "";
+            position: absolute;
+            top: 100px;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(255, 255, 255, 0.5); /* Semi-transparent white color */
+            z-index: -1; /* Place the sheet behind the text */
         }
         .founder-highlight {
-            color: yellow; /* Highlight color for founders */
+            color: rgb(87, 45, 160); /* Highlight color for founders */
+        }
+        .logo-text {
+            font-size: 28px; /* Adjust font size */
+            font-weight: bold; /* Make text bold */
+            font-style: italic; /* Add italic style */
+            font-family: cursive;
+            color: #333; /* Text color */
+            text-transform: uppercase; /* Convert text to uppercase */
         }
     </style>
 </head>
 <body>
     <header>
         <div>
-            <img src="artist_logo.png" alt="ArtistLab Logo"> <!-- Add your logo file path here -->
+            <span class="logo-text">ArtistLab</span> 
         </div>
         <nav>
             <ul>
                 <li><a href="#">Home</a></li>
                 <li><a href="#">About us</a></li>
-                <li><a href="#">Contact us</a></li>
+                <li><a href="#">Contact us</a></li> 
+                <li><a href="#">Login</a></li>
             </ul>
         </nav>
     </header>
 
     <div class="welcome-message">
         <h1>Welcome to ArtistLab Space</h1>
-        <p>Explore the world of art with <span class="founder-highlight">Adarsh</span>, <span class="founder-highlight">Abhishek</span>, <span class="founder-highlight">Pranav</span>, <span class="founder-highlight">Roshan</span>, and <span class="founder-highlight">Saurabh</span>.</p>
+        <h4>"Where creativity finds stage"</h4>
+        <p>Explore the world of art with the founders <span class="founder-highlight">Adarsh</span>, <span class="founder-highlight">Abhishek</span>, <span class="founder-highlight">Pranav</span>, <span class="founder-highlight">Roshan</span>, and <span class="founder-highlight">Saurabh</span>.</p>
     </div>
 </body>
 </html>
